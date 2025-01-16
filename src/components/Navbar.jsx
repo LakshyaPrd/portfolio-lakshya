@@ -60,7 +60,7 @@ function Navbar() {
           ref={menuRef}
           className={`${
             isMenuOpen ? "flex" : "hidden"
-          } absolute top-full left-0 w-full  backdrop-blur-lg p-6 lg:flex lg:flex-row lg:static lg:bg-transparent lg:w-auto gap-4 items-center justify-center`}
+          } absolute top-full left-0 w-full bg-black/70 backdrop-blur-lg p-6 lg:flex lg:flex-row lg:static lg:bg-transparent lg:w-auto gap-4 items-center justify-center`}
         >
           {/* Centered Links (Home, About, etc.) */}
           <div className="flex flex-col lg:flex-row gap-6 justify-center items-center w-full lg:w-auto">
