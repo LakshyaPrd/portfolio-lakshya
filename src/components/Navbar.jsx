@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import logo from "../assets/logo.png";
 import { FaLinkedin, FaGithub, FaTwitter, FaInstagram, FaBars, FaTimes } from "react-icons/fa";
 import "../index.css";
@@ -6,30 +6,36 @@ import "../index.css";
 function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const menuRef = useRef(null);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
   const handleScroll = () => {
-    if (window.scrollY > 20) {
-      setIsScrolled(true);
-    } else {
-      setIsScrolled(false);
+    setIsScrolled(window.scrollY > 20);
+  };
+
+  const handleClickOutside = (event) => {
+    if (menuRef.current && !menuRef.current.contains(event.target) && !event.target.closest('button')) {
+      setIsMenuOpen(false);
     }
   };
 
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
+    document.addEventListener("mousedown", handleClickOutside);
+
     return () => {
       window.removeEventListener("scroll", handleScroll);
+      document.removeEventListener("mousedown", handleClickOutside);
     };
   }, []);
 
   return (
     <nav
-      className={`px-10 fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
-        isScrolled ? "backdrop-blur-lg" : "bg-transparent"
+      className={`px-20  fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
+        isScrolled || isMenuOpen ? "backdrop-blur-lg " : "bg-transparent"
       }`}
     >
       <div className="flex items-center justify-between">
@@ -51,45 +57,46 @@ function Navbar() {
 
         {/* Links and Social Media Section */}
         <div
+          ref={menuRef}
           className={`${
             isMenuOpen ? "flex" : "hidden"
-          } absolute top-full left-0 w-full backdrop-blur-lg p-6 lg:flex lg:flex-row lg:static lg:bg-transparent lg:w-auto gap-4 items-center justify-center`}
+          } absolute top-full left-0 w-full bg-black/70 backdrop-blur-lg p-6 lg:flex lg:flex-row lg:static lg:bg-transparent lg:w-auto gap-4 items-center justify-center`}
         >
           {/* Centered Links (Home, About, etc.) */}
           <div className="flex flex-col lg:flex-row gap-6 justify-center items-center w-full lg:w-auto">
             <a
               href="#home"
-              className="block py-2 px-4 text-sm font-semibold text-white hover:text-purple-500 transition-colors duration-200"
+              className="block py-2 px-4 text-sm font-semibold text-white hover:text-purple-400 transition-colors duration-200"
             >
               Home
             </a>
             <a
               href="#about"
-              className="block py-2 px-4 text-sm font-semibold text-white hover:text-purple-500 transition-colors duration-200"
+              className="block py-2 px-4 text-sm font-semibold text-white hover:text-purple-400 transition-colors duration-200"
             >
               About
             </a>
             <a
               href="#experience"
-              className="block py-2 px-4 text-sm font-semibold text-white hover:text-purple-500 transition-colors duration-200"
+              className="block py-2 px-4 text-sm font-semibold text-white hover:text-purple-400 transition-colors duration-200"
             >
               Experience
             </a>
             <a
               href="#projects"
-              className="block py-2 px-4 text-sm font-semibold text-white hover:text-purple-500 transition-colors duration-200"
+              className="block py-2 px-4 text-sm font-semibold text-white hover:text-purple-400 transition-colors duration-200"
             >
               Projects
             </a>
             <a
               href="#technology"
-              className="block py-2 px-4 text-sm font-semibold text-white hover:text-purple-500 transition-colors duration-200"
+              className="block py-2 px-4 text-sm font-semibold text-white hover:text-purple-400 transition-colors duration-200"
             >
               Skills
             </a>
             <a
               href="#contact"
-              className="block py-2 px-4 text-sm font-semibold text-white hover:text-purple-500 transition-colors duration-200"
+              className="block py-2 px-4 text-sm font-semibold text-white hover:text-purple-400 transition-colors duration-200"
             >
               Contact
             </a>
@@ -103,7 +110,7 @@ function Navbar() {
               rel="noopener noreferrer"
               title="LinkedIn"
               aria-label="LinkedIn"
-              className="hover:text-indigo-600 transition-colors duration-200"
+              className="hover:text-indigo-500 transition-colors duration-200"
             >
               <FaLinkedin />
             </a>
@@ -123,7 +130,7 @@ function Navbar() {
               rel="noopener noreferrer"
               title="Instagram"
               aria-label="Instagram"
-              className="hover:text-pink-400 transition-colors duration-200"
+              className="hover:text-pink-500 transition-colors duration-200"
             >
               <FaInstagram />
             </a>
@@ -133,7 +140,7 @@ function Navbar() {
               rel="noopener noreferrer"
               title="Twitter"
               aria-label="Twitter"
-              className="hover:text-neutral-500 transition-colors duration-200"
+              className="hover:text-neutral-700 transition-colors duration-200"
             >
               <FaTwitter />
             </a>
