@@ -5,6 +5,9 @@ import { GrMysql } from "react-icons/gr";
 import { SiAdobephotoshop } from "react-icons/si";
 import { FiFigma } from "react-icons/fi";
 import { FaPython } from "react-icons/fa";
+import { FaGithub } from "react-icons/fa"; 
+import { SiTailwindcss } from "react-icons/si"; 
+import { SiFramer } from "react-icons/si"; 
 import {animate, motion} from "framer-motion";
 import "../index.css";
 
@@ -72,6 +75,21 @@ const Technologies = () => {
             initial="initial"
             animate="animate" className="rounded-2xl border-4 border-neutral-800 p-4">
                 <FaPython className="text-5xl "/>
+            </motion.div>
+            <motion.div variants={iconVar(4)}
+            initial="initial"
+            animate="animate" className="rounded-2xl border-4 border-neutral-800 p-4">
+                <FaGithub className="text-5xl "/>
+            </motion.div>
+            <motion.div variants={iconVar(4)}
+            initial="initial"
+            animate="animate" className="rounded-2xl border-4 border-neutral-800 p-4">
+                <SiTailwindcss  className="text-5xl text-blue-600 "/>
+            </motion.div>
+            <motion.div variants={iconVar(4)}
+            initial="initial"
+            animate="animate" className="rounded-2xl border-4 border-neutral-800 p-4">
+                <SiFramer  className="text-5xl "/>
             </motion.div>
             
         </motion.div>
