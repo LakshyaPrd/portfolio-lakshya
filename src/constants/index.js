@@ -37,6 +37,7 @@ export const PROJECTS = [
     description:
       "A fully functional website which is used to track record of vehicles entered in the parking.",
     technologies: ["HTML", "CSS", "React", "Flask", "SqLite","OpenCv"],
+    github:"https://github.com/LakshyaPrd/Smart-Parking-Management",
   },
   {
     title: "Task Management App",
@@ -44,6 +45,7 @@ export const PROJECTS = [
     description:
       "An application for managing tasks and projects, with features such as task creation, assignment, and progress tracking.",
     technologies: ["HTML", "CSS", "Angular", "Firebase"],
+    github: "https://github.com/LakshyaPrd/passwordGenerator",
   },
   {
     title: "Portfolio Website",
@@ -51,6 +53,7 @@ export const PROJECTS = [
     description:
       "A personal portfolio website showcasing projects, skills, and contact information.",
     technologies: ["HTML", "CSS", "React", "Bootstrap"],
+    github: "https://github.com/LakshyaPrd/portfolio-lakshya",
   },
   {
     title: "Marrige Garden Website",
@@ -58,6 +61,7 @@ export const PROJECTS = [
     description:
       "A platform where you can see the details of a Marrige Garden and contact with the onower realtime.",
     technologies: ["HTML", "CSS", "React","Express"],
+    github:"https://github.com/LakshyaPrd/pradhanvatika",
   },
 ];
 
