@@ -34,7 +34,7 @@ function Navbar() {
 
   return (
     <nav
-      className={`px-10  fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
+      className={`max-md:mt-4 max-md:py-4 px-10  fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
         isScrolled || isMenuOpen ? "backdrop-blur-lg " : "bg-transparent"
       }`}
     >

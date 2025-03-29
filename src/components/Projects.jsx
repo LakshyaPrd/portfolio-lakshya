@@ -49,17 +49,29 @@ const Projects = () => {
                   </span>
                 ))}
               </div>
-              {/* Button to redirect to GitHub */}
-              {project.github && (
-                <a
-                  href={project.github}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-block mt-2 rounded bg-purple-500 px-4 py-2 text-sm font-medium text-white hover:bg-purple-600 transition-colors"
-                >
-                  View on GitHub
-                </a>
-              )}
+              {/* Buttons for GitHub and Live */}
+              <div className="space-x-4">
+                {project.github && (
+                  <a
+                    href={project.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-block rounded bg-purple-500 px-4 py-2 text-sm font-medium text-white hover:bg-purple-600 transition-colors"
+                  >
+                    View on GitHub
+                  </a>
+                )}
+                {project.live && (
+                  <a
+                    href={project.live}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-block rounded bg-purple-500 px-4 py-2 text-sm font-medium text-white hover:bg-purple-600 transition-colors"
+                  >
+                    View Live
+                  </a>
+                )}
+              </div>
             </motion.div>
           </div>
         ))}

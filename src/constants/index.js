@@ -2,7 +2,7 @@ import project1 from "../assets/projects/project-1.jpg";
 import project2 from "../assets/projects/project-2.jpg";
 import project3 from "../assets/projects/project-3.jpg";
 import project4 from "../assets/projects/project-4.jpg";
-
+import ck from "../assets/projects/ck.png";
 export const HERO_CONTENT = `I am a passionate full stack developer & graphic designer with a knack for crafting robust and scalable web applications. With hands-on experience, I have honed my skills in front-end technologies like React and Next.js, as well as back-end technologies like Node.js, MySQL and Express. 
                     My goal is to leverage my expertise to create innovative solutions that drive business growth and deliver exceptional user experiences.`;
 
@@ -38,6 +38,16 @@ export const PROJECTS = [
       "A fully functional website which is used to track record of vehicles entered in the parking.",
     technologies: ["HTML", "CSS", "React", "Flask", "SqLite","OpenCv"],
     github:"https://github.com/LakshyaPrd/Smart-Parking-Management",
+    live:"https://github.com/LakshyaPrd/Smart-Parking-Management",
+  },
+  {
+    title: "Coffee Kala Website",
+    image: ck,
+    description:
+      "Coffee Kala is a Jaipur based Cafe, and this website is for a coffee shop that allows customers to view the menu, order coffee, and contact the shop.",
+    technologies: ["HTML", "CSS", "React", "Flask", "SqLite","OpenCv"],
+    github:"https://github.com/LakshyaPrd/Smart-Parking-Management",
+    live:"https://coffeekala.vercel.app/",
   },
   {
     title: "Task Management App",
@@ -46,6 +56,7 @@ export const PROJECTS = [
       "An application for managing tasks and projects, with features such as task creation, assignment, and progress tracking.",
     technologies: ["HTML", "CSS", "Angular", "Firebase"],
     github: "https://github.com/LakshyaPrd/passwordGenerator",
+    live:"https://github.com/LakshyaPrd/passwordGenerator",
   },
   {
     title: "Portfolio Website",
@@ -54,6 +65,7 @@ export const PROJECTS = [
       "A personal portfolio website showcasing projects, skills, and contact information.",
     technologies: ["HTML", "CSS", "React", "Bootstrap"],
     github: "https://github.com/LakshyaPrd/portfolio-lakshya",
+    live:"https://portfolio-lakshya-phi.vercel.app/",
   },
   {
     title: "Marrige Garden Website",
@@ -62,6 +74,7 @@ export const PROJECTS = [
       "A platform where you can see the details of a Marrige Garden and contact with the onower realtime.",
     technologies: ["HTML", "CSS", "React","Express"],
     github:"https://github.com/LakshyaPrd/pradhanvatika",
+    live:"https://pradhanvatika.vercel.app/",
   },
 ];
 
